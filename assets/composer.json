@@ -1,0 +1,7 @@
+{
+    "require": {
+        "composer/composer": "^2.1",
+        "fortawesome/font-awesome": "^5.15",
+        "datatables/datatables": "^1.10"
+    }
+}
