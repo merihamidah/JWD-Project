@@ -2,6 +2,7 @@
     "require": {
         "composer/composer": "^2.1",
         "fortawesome/font-awesome": "^5.15",
-        "datatables/datatables": "^1.10"
+        "datatables/datatables": "^1.10",
+        "select2/select2": "^4.0"
     }
 }

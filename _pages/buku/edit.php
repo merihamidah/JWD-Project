@@ -3,7 +3,7 @@ include "./_lib/entities/buku.php";
 $id = $_GET['id'];
 $buku = getById($id);
 ?>
-<h1>Halaman Tambah Data</h1>
+<h1>Halaman Edit Data</h1>
 
 <div class="card card-default">
     <div class="card-header">
@@ -12,7 +12,7 @@ $buku = getById($id);
         </div>
     </div>
     <div class="card-body">
-        <form action="?page=buku/update&id=<?php echo $buku['id'] ?>" method="post">
+        <form action="?page=buku/update&id=<?php echo $buku['id'] ?>" enctype="multipart/form-data" method="post">
             <div class="row">
                 <div class="col">
                     <div class="form-group">

@@ -8,6 +8,7 @@ include "./_lib/entities/buku.php";
 <div class="card card-default">
     <div class="card-header">
         <a href="?page=buku/tambah" class="btn btn-primary float-right"> <i class="fa fa-plus"></i> Tambah</a>
+        <a href="?page=buku/contoh" class="btn btn-primary float-right"> <i class="fa fa-plus"></i> Contoh</a>
 
         <div class="card-title">
             Table Anggota

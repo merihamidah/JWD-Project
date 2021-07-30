@@ -1,4 +1,5 @@
 <?php
+
 include "./_lib/conn.php";
 
 function getAll()
@@ -25,18 +26,20 @@ function getById($id)
 function store($param)
 {
     global $conn;
-    $query = "insert into buku (judul, penulis, barcode, penerbit, tahun_terbit, isbn, stok, tersedia, dipinjam, cover) 
-                values (:judul, :penulis, :barcode, :penerbit, :tahun_terbit, :isbn, :stok, :tersedia, :dipinjam, :cover)";
+    $query = "insert into buku (isbn, barcode, judul, penulis, penerbit, tahun_terbit, stok, tersedia, dipinjam, cover) 
+                values (:isbn, :barcode, :judul, :penulis, :penerbit, :tahun_terbit, :stok, :tersedia, :dipinjam, :cover)";
     $statement = $conn->prepare($query);
     $statement->execute($param);
 }
 
-function update($param)
+function update($param, $cover = false)
 {
     global $conn;
-    $query = "update buku set judul=:judul, penulis=:penulis, barcode=:barcode, 
-                penerbit=:penerbit, tahun_terbit=:tahun_terbit, isbn=:isbn, stok=:stok, 
-                tersedia=:tersedia, dipinjam=:dipinjam, cover=:cover, where id=:id ";
+    if($cover){
+        $query = "update buku set isbn=:isbn, barcode=:barcode, judul=:judul, penulis=:penulis, penerbit=:penerbit, tahun_terbit=:tahun_terbit, stok=:stok, tersedia=:tersedia, dipinjam=:dipinjam, cover=:cover where id=:id ";
+    } else {
+        $query = "update buku set isbn=:isbn, barcode=:barcode, judul=:judul, penulis=:penulis, penerbit=:penerbit, tahun_terbit=:tahun_terbit, stok=:stok, tersedia=:tersedia, dipinjam=:dipinjam where id=:id ";
+    }
     $statement = $conn->prepare($query);
     $statement->execute($param);
 }

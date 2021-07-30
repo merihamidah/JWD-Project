@@ -13,27 +13,30 @@ $buku = getById($id);
         </div>
     </div>
     <div class="card-body">
-        <dl>
-            <dt>Judul</dt>
-            <dd> <?php echo $buku['judul'] ?> </dd>
-            <dt>Penulis</dt>
-            <dd> <?php echo $buku['penulis'] ?> </dd>
-            <dt>Barcode</dt>
-            <dd> <?php echo $buku['barcode'] ?> </dd>
-            <dt>Penerbit</dt>
-            <dd> <?php echo $buku['penerbit'] ?> </dd>
-            <dt>Tahun Terbit</dt>
-            <dd> <?php echo $buku['tahun_terbit'] ?> </dd>
-            <dt>ISBN</dt>
-            <dd> <?php echo $buku['isbn'] ?> </dd>
-            <dt>Stok</dt>
-            <dd> <?php echo $buku['stok'] ?> </dd>
-            <dt>Tersedia</dt>
-            <dd> <?php echo $buku['tersedia'] ?> </dd>
-            <dt>Dipinjam</dt>
-            <dd> <?php echo $buku['dipinjam'] ?> </dd>
-             <dt>Cover</dt>
-            <dd> <?php echo $buku['cover'] ?> </dd>
-        </dl>
+        <div class="row">
+            <div class="col">
+                <dl>
+                    <dt>ISBN</dt>
+                    <dd> <?php echo $buku['isbn'] ?> </dd>
+                    <dt>Barcode</dt>
+                    <dd> <?php echo $buku['barcode'] ?> </dd>
+                    <dt>Judul</dt>
+                    <dd> <?php echo $buku['judul'] ?> </dd>
+                    <dt>Penulis</dt>
+                    <dd> <?php echo $buku['penulis'] ?> </dd>
+                    <dt>Penerbit</dt>
+                    <dd> <?php echo $buku['penerbit'] ?> </dd>
+                    <dt>Tahun Terbit</dt>
+                    <dd> <?php echo $buku['tahun_terbit'] ?> </dd>
+                    <dt>Stok</dt>
+                    <dd> <?php echo $buku['stok'] ?> </dd>
+                    <dt>Tersedia / Dipinjam</dt>
+                    <dd> <?php echo $buku['tersedia'] ?> / <?php echo $buku['dipinjam'] ?></dd>
+                </dl>
+            </div>
+            <div class="col">
+                <img src="<?php echo $buku['cover'] ?>" alt="">
+            </div>
+        </div>
     </div>
 </div>
